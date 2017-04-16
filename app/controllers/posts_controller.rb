@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   	@post = Post.new(post_params)
 
   	if @post.save
+      PostMailer.post_confirmation(@post).deliver
   		redirect_to @post
   	else
   		render 'new'
