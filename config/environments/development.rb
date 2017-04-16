@@ -39,8 +39,8 @@ Rails.application.configure do
     authentication: "plain",
     domain: "email.alephmarketingpros.com",
     enable_starttls_auto: true,
-    user_name: "<mailgun username here>",
-    password: "<mailgun password here>"
+    user_name: ENV['MAILGUN_USERNAME'],
+    password: ENV['MAILGUN_PASSWORD']
   }  
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
